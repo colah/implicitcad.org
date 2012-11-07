@@ -12,7 +12,7 @@
         %br/
         .row
           - if cycle("even", "odd") == "odd"
-            .offset2.span8.codeblock-btn-combo{:style => "text-align: center;"}
+            .offset2.span8.codeblock-btn-combo.example-image-height{:style => "text-align: center;"}
               %pre.highlightable{:style => "text-align: left;"}= example_code example
               %a.btn.btn-large.btn-h2-align{href: "/examples/#{example}"} Try this code!
             .span2
@@ -20,7 +20,7 @@
           - else
             .span2
               .well{style: "height: 150px; background:url('/assets/examples-#{example}.png') no-repeat 50% 65%"}
-            .span8.codeblock-btn-combo{:style => "text-align: center;"}
+            .span8.codeblock-btn-combo.example-image-height{:style => "text-align: center;"}
               %pre.highlightable{:style => "text-align: left;"}= example_code example
               %a.btn.btn-large.btn-h2-align{href: "/examples/#{example}"} Try this code!
         .row
