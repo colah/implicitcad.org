@@ -28,14 +28,14 @@ p.italic
 .nav
   margin: 0px
   position: absolute
-  top: 30px
+  top: 17px
   right: 30px
   font-size: 18px
 
 .implicit-title
   margin: 0px
   position: absolute
-  top: 35px
+  top: 25px
   font-size: 18px
   right: auto
   left: 29px
@@ -58,7 +58,7 @@ body
     top: 20px
     bottom: 20px
 
-  margin-top: 100px
+  margin-top: 90px
 
   background: url('/assets/60degree_gray_white.png')
   box-shadow: 0px 5px 5px #888
@@ -125,14 +125,34 @@ body
   border-bottom-right-radius: 8px
   border-top-right-radius: 8px
 
+.example-image
+  height: 150px
+  background-repeat: no-repeat
+  background-position: 50% 60%
 
-.landing-codeblock
+.highlightable
+  font-size: 14px
+
+.codeblock-btn-combo
   .highlightable
     margin-bottom: 0
     border-bottom-right-radius: 0px
     border-bottom-left-radius: 0px
     border-bottom: 0
+  &.example-image-height
+    .highlightable
+      min-height: 136px // (image: 190px) - ((padding: 2*8.5px) + (btn: 37px))
   a.btn
+    margin-top: 0
     display: block
     border-top-right-radius: 0px
     border-top-left-radius: 0px
+
+.btn-very-large
+  font-size: 20px
+  padding: 15px 30px
+
+.landing-header
+  font-size: 35px
+  line-height: 40px
+  font-weight: 500
