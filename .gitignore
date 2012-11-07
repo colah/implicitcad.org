@@ -18,3 +18,5 @@
 .DS_Store
 *.sublime-project
 *.sublime-workspace
+
+.vagrant

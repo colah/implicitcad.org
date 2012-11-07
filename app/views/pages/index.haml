@@ -10,12 +10,11 @@
       .row
         .span8
           %h2 Step 1: Code, Step 2: Things!
-        .span4.center-generic
-          %a.btn.btn-success.btn-large.btn-h2-align{href: "/examples/twisted_extrusion"}
-            Try out this code!
       .row
-        .span8
+        .span8.landing-codeblock
           %pre.highlightable= escad_example(:twisted_extrusion)
+          %a.btn.btn-large{href: "/examples/twisted_extrusion"}
+            Try out this code!
         .span4.center-generic
           .well{style: "height: 188px; background:url('/assets/example1-small.png') no-repeat 50% 65%"}
       %br
