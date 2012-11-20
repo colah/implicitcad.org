@@ -47,5 +47,34 @@ module ApplicationHelper
     end
   end
 
+  def escad_pre_with_image(&block)
+    content = capture_haml do
+      block.call
+    end
+    content = html_escape content
+    content = preserve ("\n"*0 + content)
+    pre = "<pre class=\"highlightable\">#{content}</pre>"
+    capture_haml do
+      haml_tag 'div.row.vertical-margined' do
+        haml_tag 'div.span6.offset1.codeblock-btn-combo.example-image-height' do
+          haml_concat pre
+          haml_tag 'a.btn.btn-large.btn-h2-align', "Try this code!"
+        end
+        haml_tag 'div.span4' do
+          haml_tag 'div.well.example-image'
+        end
+      end
+    end
+  end
+
+  def h2_anchor(title)
+    name = title.downcase.gsub(" ", "-")
+    capture_haml do
+      haml_tag :h2 do
+        haml_tag 'a.anchor', :name => name
+        haml_concat title
+      end
+    end
+  end
 
 end
