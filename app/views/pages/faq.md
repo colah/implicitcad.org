@@ -36,7 +36,7 @@ ImplicitCAD and OpenSCAD
 
 * The speed of ImplicitCAD depends on quality of the rendering you are trying to make. To make models of comparable quality to their OpenSCAD counter parts, ImplicitCAD is generally much faster.
 
-* OpenSCAD's performance drastically slows down as objects get more complex. ImplicitCAD's performance is much less effected by the complexity of the objects it is rendering (more effected by the quality of object you ask it to render). ImplicitCAD also often has simpler ways of representing objects than OpenSCAD.
+* OpenSCAD's performance drastically slows down as objects get more complex. ImplicitCAD's performance is much less affected by the complexity of the objects it is rendering (more affected by the quality of object you ask it to render). ImplicitCAD also often has simpler ways of representing objects than OpenSCAD.
 
 * ImplicitCAD is capable of parallel rendering. Unlike OpenSCAD, it is happy to use more threads and be faster!
 
