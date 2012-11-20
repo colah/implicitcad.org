@@ -1,0 +1,120 @@
+.content-container-wrapper
+  .index
+    .container.enlarged
+      :markdown
+        ImplicitiCAD (Extopenscad) Tutorial
+        ===================================
+        
+        This tutorial will teach you how to design objects in ImplicitCAD's extopenscad language. It requires no knowledge of Haskell.
+
+      =h2_anchor "Running ImplicitCAD"
+      :markdown
+  
+        You have two options for using ImplicitCAD: using the [online editor](/editor) or [installing it locally](/faq#local-installation).
+        
+        If you run it locally, ImplicitCAD is solely a compiler, turning `.escad` files into your preferred form of output. You need a separate editor and viewer (eg. meshlab).
+        
+      .row
+        .span10.offset1
+          %pre.vertical-margined
+            = preserve do
+              :escaped
+                $ extopenscad test.escad test.stl
+                Rendering 3D object to test.stl
+                ...
+                $ meshlab test.stl
+      :markdown
+
+        On the other hand, using ImplicitCAD in the editor is as simple as clicking the "Render" button. It does, however, require WebGL.
+
+      =h2_anchor "A Simple Object"
+      :markdown
+    
+        To begin with, let's make a circle...
+
+      =escad_pre_with_image do
+        circle(10);
+      :markdown
+
+        This is a circle of radius 10 (by default, milimeters). Circle can also be used to make regular polygons using the `$fn` parameter.
+
+      =escad_pre_with_image do
+        circle(10, $fn=6);
+      :markdown
+
+        We can also make 3D objects, like spheres.
+
+      =escad_pre_with_image do
+        sphere(10);
+      :markdown
+
+        There are also squares, which can be used either as perfect squares (eg. `square(10)`) or as rectangles (eg. `square([10, 15])`) and can even be given rounded corners:
+
+      =escad_pre_with_image do
+        square([10,20], r=3);
+      :markdown
+
+        The 3D analog, `cube` behaves similarly (eg. `cube([10,20,30])`). Other primitives include `cylinder` and `polygon`. There primitives are all documented in the [API Reference](/docs/api).
+
+        Making More Complicated Objects
+        -------------------------------
+
+        The key thing to building more complicated objects is to make them out of less complex ones. The simplest way to do this is with a `union`, which simply "adds" objects together. Note that we use translate to shift an object.
+
+      =escad_pre_with_image do
+        :preserve
+          union() {
+            square(20);
+            translate([10,10]) square(20);
+          }
+      :markdown
+
+        Union is capable of rounding ("beveling") the interface between the objects being unioned.
+
+      =escad_pre_with_image do
+        :preserve
+          union(r=3) {
+            square(20);
+            translate([10,10]) square(20);
+          }
+      :markdown
+
+        There is also `difference` which cuts away pieces from an object, and `intersection` which takes, well, intersects them. Both of these also support rounding. (Again, you can refer to the API reference for more information: [API Reference](/docs/api))
+
+      =escad_pre_with_image do
+        :preserve
+          difference(r=3) {
+            square(20);
+            translate([10,10]) square(20);
+          }
+      :markdown
+
+        Linear Extrude
+        --------------
+
+        Linear extrude is both a powerful tool and a good example of how ImplicitCAD philosophy of *generalization*. At its simplest, `linear_extrude` turns a 2D object into a 3D object by extruding it on the z-axis.
+
+      =escad_pre_with_image do
+        :preserve
+          linear_extrude(height = 20)
+            circle(30);
+      :markdown
+
+        But we don't need to give a constant height to extrude to. We can give a function of x and y.
+
+      =escad_pre_with_image do
+        :preserve
+          linear_extrude(height(x,y) = 20 + x^2/50)
+            circle(30);
+      :markdown
+
+        And we can scale, translate, and twist the object as we extrude! For example:
+
+      =escad_pre_with_image do
+        :preserve
+          linear_extrude(20, scale(h) = cos(h)/10)
+            circle(30);
+      :markdown
+
+      //:markdown
+      //  #{File.read(File.join(File.dirname(__FILE__), "tutorial.md"))}
