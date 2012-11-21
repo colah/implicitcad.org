@@ -11,7 +11,7 @@
 
       =h2_anchor "Running ImplicitCAD"
       :markdown
-  
+
         You have two options for using ImplicitCAD: using the [online editor](/editor) or [installing it locally](/faq#local-installation).
         
         If you run it locally, ImplicitCAD is solely a compiler, turning `.escad` files into your preferred form of output. You need a separate editor and viewer (eg. meshlab).
@@ -57,6 +57,23 @@
       :markdown
 
         The 3D analog, `cube` behaves similarly (eg. `cube([10,20,30])`). Other primitives include `cylinder` and `polygon`. There primitives are all documented in the [API Reference](/docs/api).
+
+
+        Rendering Quality
+        -----------------
+
+        ImplicitCAD has a perfect model of your object internally, but when you ask for it to be rendered in some format, it isn't possible to export it in that manner. ImplicitCAD can try to export it very quickly and not do as good a job, or take longer and do a better job. This is rendering quality.
+
+        Rendering quality is controlled by the variable `$quality` which is by default `1`. You can make it arbitrarily high, though the server will refuse to render objects at very high qualities because it needs to serve many people. The amount of time it will take to render is linear with respect to quality, so doubling quality will approximately double the amount of time it takes for your object to render.
+
+        Rendering quality is particularly visible when exporting triangle meshes.
+
+      .row.vertical-margined
+        .span4.offset2
+          .well.example-image{style: "background-image: url('/assets/tutorial-sphere-bad.png'); background-size:contain;"}
+        .span4.offset
+          .well.example-image{style: "background-image: url('/assets/tutorial-sphere-good.png'); background-size:contain;"}
+      :markdown
 
         Making More Complicated Objects
         -------------------------------
@@ -106,7 +123,7 @@
 
       =escad_pre_with_image do
         :preserve
-          linear_extrude(height(x,y) = 20 + x^2/50)
+          linear_extrude(height(x,y) = 20 + (y^2-x^2)/60)
             circle(30);
       :markdown
 
@@ -114,7 +131,7 @@
 
       =escad_pre_with_image do
         :preserve
-          linear_extrude(20, scale(h) = cos(h)/10)
+          linear_extrude(20, scale(h) = 1 + cos(h)/10)
             circle(30);
       :markdown
 
