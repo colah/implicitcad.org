@@ -1,0 +1,2 @@
+linear_extrude(20, scale(h) = 1 + cos(h)/10)
+  circle(30);

@@ -1,0 +1,2 @@
+linear_extrude(height(x,y) = 20 + (y^2-x^2)/60)
+  circle(30);
