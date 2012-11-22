@@ -60,8 +60,8 @@ $ ->
       dataType: "jsonp"
       success: (response) ->
         console.log response
-        [shape, output] = response
-        $(".stl-viewer").stlViewer( "loadGeometry", shape ) if shape?
+        [shape, output, is2D, w] = response
+        $(".stl-viewer").stlViewer( "loadGeometry", shape, is2D = is2D, width = w ) if shape?
         output_html = output.replace("\n", "<br/>")
         if shape?
           $(".console").append("<p>#{output_html}</p>")
@@ -81,7 +81,7 @@ $ ->
       data: {source: codeMirror.getValue(), format: format_req}
       dataType: "jsonp"
       success: (response) ->
-         [shape, output] = response
+         [shape, output, is2D, w] = response
          uriContent = "data:model/"+format_mime+"," + encodeURIComponent(shape)
          console_write("<p>Export Done! <a href=\""+uriContent+"\" download=\"download."+ ext+"\" class=\"download-link\"> Download Ready!</a></p>")
          $(".download-link")[0].click()

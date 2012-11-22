@@ -115,7 +115,7 @@ $.widget "ui.stlViewer", $.ui.mouse,
     @render()
 
 
-  loadGeometry: (geometry, append = false) ->
+  loadGeometry: (geometry, is2D = false, width = 1,  append = false) ->
     #geometry	= new THREE.TorusKnotGeometry(25, 8, 75, 20)
     #geometry.mergeVertices()
     #geometry.computeTangents()
@@ -165,7 +165,14 @@ $.widget "ui.stlViewer", $.ui.mouse,
     @scene.add(@mesh)
     # reset rotation
     # @mesh.rotation.x = 1/2 * Math.PI/2
-    @mesh.quaternion = (new THREE.Quaternion()).setFromAxisAngle(new THREE.Vector3(1,0,0), Math.PI/2)
+    if is2D
+      @mesh.quaternion = (new THREE.Quaternion()).setFromAxisAngle(new THREE.Vector3(1,0,0), Math.PI)
+    else
+      @mesh.quaternion = (new THREE.Quaternion()).setFromAxisAngle(new THREE.Vector3(1,0,0), Math.PI/2)
+
+    #@camera.scale.x = 0.001*width
+    #@camera.scale.y = 0.001*width
+    #@camera.scale.z = 0.001*width
     # reset mouse drag
     @dragging = false
     @setTransparent(@transparent, false)
