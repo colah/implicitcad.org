@@ -12,10 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.mouse
+//= require jquery.ui.position
+/// require jquery.ui.all
 //= require bootstrap-dropdown
-//= require_tree ../../../vendor/assets/javascripts/
+//
+//= require_tree ../../../vendor/assets/javascripts/codemirror
+//= require ../../../vendor/assets/javascripts/handlebars-1.0.0.beta.6
+//= require ../../../vendor/assets/javascripts/jquery.hotkeys
+//= require ../../../vendor/assets/javascripts/jquery.mousewheel
+//= require ../../../vendor/assets/javascripts/sugar-1.2.1.min
+//= require ../../../vendor/assets/javascripts/Three
+//= require ../../../vendor/assets/javascripts/underscore-min
+//
 //= require_tree ./codemirror/
-//= require_tree ./iobar/
-//= require_tree .
+/// require_tree ./iobar/
+//= require_directory .
 

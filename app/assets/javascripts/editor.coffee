@@ -26,12 +26,12 @@ $ ->
     mode:  "text/x-extopenscad"
     lineNumbers: true
 
-  console.log $(".io-bar").ioBar
-  $(".io-bar").ioBar
-    app: "extopenscad"
-    serialize: => codeMirror.getValue()
-    deserialize: (content) => codeMirror.setValue(content)
-    reset:  => codeMirror.setValue("")
+  #console.log $(".io-bar").ioBar
+  #$(".io-bar").ioBar
+  #  app: "extopenscad"
+  #  serialize: => codeMirror.getValue()
+  #  deserialize: (content) => codeMirror.setValue(content)
+  #  reset:  => codeMirror.setValue("")
 
   # Zoom buttons
   $(".btn-zoom-out").click => $stlViewer.stlViewer("zoom", -1)
@@ -102,5 +102,5 @@ $ ->
   # Sending the code to the server to render
   $(".btn-render").click => render_and_load()
    
-  $(window).load => do render_and_load()  if content.length > 2
+  $(window).load => do render_and_load if content.length > 2
 
