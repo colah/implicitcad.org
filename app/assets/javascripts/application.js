@@ -29,5 +29,9 @@
 //
 //= require_tree ./codemirror/
 /// require_tree ./iobar/
-//= require_directory .
+//
+//= require codemirror_extopenscad
+//= require editor
+//= require stl_viewer
+
 

@@ -1,4 +1,4 @@
-#= require stl_geometry
+## require stl_geometry
 ## require iobar/io-bar
 
 v = (x,y,z) -> new THREE.Vector3(x,y,z)
@@ -180,8 +180,8 @@ $.widget "ui.stlViewer", $.ui.mouse,
     console.log "loaded geometry!"
 
 
-  loadSTL: (stlString)->
-    @loadGeometry new STLGeometry(stlString)
+  #loadSTL: (stlString)->
+  #  @loadGeometry new STLGeometry(stlString)
 
 
   render: ->
