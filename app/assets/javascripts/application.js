@@ -20,7 +20,7 @@
 //= require bootstrap-dropdown
 //
 //= require_tree ../../../vendor/assets/javascripts/codemirror
-//= require ../../../vendor/assets/javascripts/handlebars-1.0.0.beta.6
+/// require ../../../vendor/assets/javascripts/handlebars-1.0.0.beta.6
 //= require ../../../vendor/assets/javascripts/jquery.hotkeys
 //= require ../../../vendor/assets/javascripts/jquery.mousewheel
 //= require ../../../vendor/assets/javascripts/sugar-1.2.1.min
