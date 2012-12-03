@@ -15,7 +15,7 @@
 //= require jquery.ui.core
 //= require jquery.ui.widget
 //= require jquery.ui.mouse
-//= require jquery.ui.position
+/// require jquery.ui.position
 /// require jquery.ui.all
 //= require bootstrap-dropdown
 //
