@@ -1,12 +1,12 @@
 /* This creates a twisted extrusion of 5 unioned circles
  * with gratuitous amounts of rounding. Try it out! */
 
-linear_extrude (height = 40, center=true) {
-  union ( r = 8) {
+linear_extrude (height = 40) {
+  union (r = 8) {
     circle (10);
-    translate ([22,0]) circle (10);
-    translate ([0,22]) circle (10);
-    translate ([-22,0]) circle (10);
-    translate ([0,-22]) circle (10);
+    translate (22,0) circle (10);
+    translate (0,22) circle (10);
+    translate (-22,0) circle (10);
+    translate (0,-22) circle (10);
   }
 }
