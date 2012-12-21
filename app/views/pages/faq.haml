@@ -30,31 +30,9 @@
 
         **Are There Packages for ImplicitCAD for (Insert Distro)?** Not yet, sorry. There should be some for Fedora soon. There are packages for cabal, the Haskell package manager, which should run on your distro.
 
-        **Are There Windows Binaries?** Not yet, sorry.
+        **Are There Binaries?** For some platforms.
 
-        **How do I install ImplicitCAD locally?** 
-
-         1. Install GHC and cabal.
-             * Debain/Ubuntu: `apt-get install ghc cabal-install`
-             * Archlinux: `pacman -S ghc cabal-install`
-             * Red Hat/Fedora: `yum install ghc cabal-install`
-             * Mac OSX:
-                 * Homebrew: `brew install ghc cabal-install`
-                 * *Fink doesn't seem to have a package for cabal* Install the Haskell Platform manually as described [here](http://hackage.haskell.org/platform/mac.html).
-             * Windows: Follows [these install instructions](http://hackage.haskell.org/platform/windows.html).
-             * [Other unices](http://www.haskell.org/platform/linux.html)
-         2. You now have two options for installation:
-             * Latest release:
-                 * Use cabal to install ImplicitCAD: `cabal update && cabal install implicit`
-             * Development version:
-                 * Install the dependencies: `cabal update && cabal install hashmap parallel parsec plugins JuicyPixels blaze-builder blaze-markup blaze-svg storable-endian unordered-containers vector-space`
-                 * Git clone this repo: `git clone https://github.com/colah/ImplicitCAD.git`
-                 * cd in: `cd ImplicitCAD/`
-                 * cabal install it: `cabal configure && cabal install`
-
-        **I get the error `bash: extopenscad: command not found` (or similar for your shell).** This probably means `~/.cabal/bin/` is not in your `$PATH` variable. Try using `~/.cabal/bin/extopenscad` as your command instead.
-
-        **I get the error `module is not loaded: 'Graphics.Implicit' (./Graphics/Implicit.hs)` when trying to use the ImplicitCAD Haskell library.**  This is most likely a problem with your Linux distro and cabal not playing nice. GHC is not configured to see the ImplicitCAD libraries. You can confirm this by try the test in `~/.cabal/lib/`. If that works, you should be able to use ghc anywhere with the `-Ldir` or `-llib` options. Alternatively, some people have permanently fixed this by doing the cabal install as root.
+        **How do I install it?** Refer to the [installation page](/install).
 
 
       =h2_anchor "ImplicitCAD and OpenSCAD"
@@ -70,9 +48,9 @@
 
         * ImplicitCAD has a perfect internal model of your object. It is of infinite resolution. In order to access it, it is rendered into an approximating triangle mesh, a raytraced image or GCode. These approximations can be of varying quality, depending on what you request.
 
-        **Is ImplicitCAD Faster than OpenSCAD?** It depends. In the cases you care about, probably.
+        **Is ImplicitCAD Faster than OpenSCAD?** It depends. In some cases it can be much, much faster, in some much slower.
 
-        * The speed of ImplicitCAD depends on quality of the rendering you are trying to make. To make models of comparable quality to their OpenSCAD counter parts, ImplicitCAD is generally much faster.
+        * The speed of ImplicitCAD depends on quality of the rendering you are trying to make. To make models of comparable quality to their OpenSCAD counter parts, ImplicitCAD is generally much faster if there isn't really fine detail.
 
         * OpenSCAD's performance drastically slows down as objects get more complex. ImplicitCAD's performance is much less affected by the complexity of the objects it is rendering (more affected by the quality of object you ask it to render). ImplicitCAD also often has simpler ways of representing objects than OpenSCAD.
 
@@ -151,3 +129,7 @@
 
         **How do I contribute?** We'd love for you to contribute! Please begin by looking at [*hacking.md*](https://github.com/colah/ImplicitCAD/blob/master/hacking.md) which will walk you through the project and common modifications you might want to make.
 
+      =h2_anchor "Miscellaneous"
+      :markdown
+
+        **Anyway to integrate this nicely with Github?** Yes! Not only does git (or other revision control systems) work really well with ImplicitCAD projects, implicitcad.org provides some features for nice github integration. In particular, implicitcad.org can open projects from a given url in the editor -- eg. [`implicitcad.org/url/editor/github.com/nathan7/nateplate/raw/master/nateplate.escad`](/url/editor/github.com/nathan7/nateplate/raw/master/nateplate.escad).
