@@ -8,8 +8,8 @@
           Docs
           .caret
         %ul.dropdown-menu
-          = navigation_item "/docs/tutorial", "Tutorial"
-          = navigation_item "/docs/api", "API Reference"
+          = navigation_item "/tutorial", "Tutorial"
+          = navigation_item "/api", "API Reference"
           = navigation_item "/faq", "FAQ"
       = navigation_button_small "/examples", "Examples"
       .btn-group
@@ -42,7 +42,7 @@
 
 
 .editor_and_viewer_container
-  %pre.editor= escad_example(@example)
+  %pre.editor= @code || escad_example(@example)
 
   .output.well
     .btns-output

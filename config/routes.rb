@@ -8,11 +8,17 @@ ImplicitCadOrg::Application.routes.draw do
   match "docs/tutorialSCAD", :to => "pages#tutorial"
 
   match "faq", :to => "pages#faq"
+  match "api", :to => "pages#api"
+  match "tutorial", :to => "pages#tutorial"
+  match "install", :to => "pages#install"
 
   match "editor", :to => "pages#editor"
 
+  match "url/stl/*url", :to => "pages#url_stl"
+  match "url/editor/*url", :to => "pages#editor", :format => false
+
   match "examples", :to => "pages#examples"
-  match "examples/:example", :to => "pages#editor"
+  match "examples/:example", :to => "pages#editor",  :format => false
 
   match "render", :to => "renderers#render_scad"
 

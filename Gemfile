@@ -48,6 +48,8 @@ gem 'unicorn'
 gem 'dalli'
 
 
+# getting content of urls, eg for github
+gem "mechanize"
 # Auth, Permissions and Administration
 gem 'authlogic'
 #gem 'activeadmin', "~> 0.4.4"
