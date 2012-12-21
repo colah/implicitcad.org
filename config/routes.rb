@@ -15,10 +15,10 @@ ImplicitCadOrg::Application.routes.draw do
   match "editor", :to => "pages#editor"
 
   match "url/stl/*url", :to => "pages#url_stl"
-  match "url/editor/*url", :to => "pages#editor", :format => false
+  match "url/editor/*url", :to => "pages#editor", :format => false, :defaults => { :format => 'html' }
 
   match "examples", :to => "pages#examples"
-  match "examples/:example", :to => "pages#editor",  :format => false
+  match "examples/:example", :to => "pages#editor",  :format => false,  :defaults => { :format => 'html' }
 
   match "render", :to => "renderers#render_scad"
 
