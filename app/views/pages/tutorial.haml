@@ -58,9 +58,8 @@
 
         The 3D analog, `cube` behaves similarly (eg. `cube([10,20,30])`). Other primitives include `cylinder` and `polygon`. There primitives are all documented in the [API Reference](/docs/api).
 
-
-        Rendering Quality
-        -----------------
+      =h2_anchor "Rendering Quality"
+      :markdown
 
         ImplicitCAD has a perfect model of your object internally, but when you ask for it to be rendered in some format, it isn't possible to export it in that manner. ImplicitCAD can try to export it very quickly and not do as good a job, or take longer and do a better job. This is rendering quality.
 
@@ -73,10 +72,9 @@
           .well.example-image{style: "background-image: url('/assets/tutorial-sphere-bad.png'); background-size:contain;"}
         .span4.offset
           .well.example-image{style: "background-image: url('/assets/tutorial-sphere-good.png'); background-size:contain;"}
-      :markdown
 
-        Making More Complicated Objects
-        -------------------------------
+      =h2_anchor "Making More Complicated Objects"
+      :markdown
 
         The key thing to building more complicated objects is to make them out of less complex ones. The simplest way to do this is with a `union`, which simply "adds" objects together. Note that we use translate to shift an object.
 
@@ -106,10 +104,9 @@
             square(20);
             translate([10,10]) square(20);
           }
-      :markdown
 
-        Linear Extrude
-        --------------
+      =h2_anchor "Linear Extrude"
+      :markdown
 
         Linear extrude is both a powerful tool and a good example of how ImplicitCAD philosophy of *generalization*. At its simplest, `linear_extrude` turns a 2D object into a 3D object by extruding it on the z-axis.
 
