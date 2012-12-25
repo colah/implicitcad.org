@@ -59,7 +59,7 @@ for (c = [1, 2, 3]) {
 
 ```
 sphere(10);
-tanslate([20,0,0]) sphere(5);
+translate([20,0,0]) sphere(5);
 ```
 
 will only show the first sphere. You need to use a union, like
@@ -67,7 +67,7 @@ will only show the first sphere. You need to use a union, like
 ```
 union(){
   sphere(10);
-  tanslate([20,0,0]) sphere(5);
+  translate([20,0,0]) sphere(5);
 }
 ```
 
