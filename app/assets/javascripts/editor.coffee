@@ -55,7 +55,7 @@ $ ->
     $(".stl-viewer").stlViewer("clearGeometry")
 
     post = $.ajax
-      url: 'http://23.21.177.106:8000/render/'
+      url: 'http://193.110.157.106:8000/render/'
       data: {source: codeMirror.getValue()}
       dataType: "jsonp"
       success: (response) ->
@@ -77,7 +77,7 @@ $ ->
     console_reset()
     console_write "<p>Preparing Export...</p>"
     $.ajax
-      url: 'http://23.21.177.106:8000/render/'
+      url: 'http://193.110.157.106:8000/render/' 
       data: {source: codeMirror.getValue(), format: format_req}
       dataType: "jsonp"
       success: (response) ->
