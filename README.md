@@ -4,7 +4,8 @@
 
 1. Install Ruby 1.9.3 and Ruby Gems
 2. `gem install rails bundler unicorn`
-3. `bundle install`
+3. `bundle update`
+4. `bundle install`
 
 ## Running the Server
 

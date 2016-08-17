@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.5'
+#gem 'rails', '3.2.5'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', :git => 'https://github.com/rails/rails.git', :branch => "3-2-stable"
 
 # Database
 gem 'sqlite3', :group => :development
@@ -18,13 +18,19 @@ gem 'pg', :group => :production
 
   gem 'sass'
   #gem 'sass-rails',   '~> 3.2.3'
-  gem 'sass-rails', :git => "git://github.com/rails/sass-rails.git", :branch => "3-2-stable"
+  gem 'sass-rails', :git => "https://github.com/rails/sass-rails.git", :tag => "3.2.2"
 
   gem 'therubyracer', :platforms => :ruby # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'coffee-rails', '~> 3.2.1'
+  #gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails', :git => "https://github.com/rails/coffee-rails.git", :branch => "3-2-stable"
+
+#  gem 'sprockets-rails', :git => "https://github.com/rails/sprockets-rails.git", :tag => "v2.1.4"
+
+#  gem 'sprockets', :git => "https://github.com/rails/sprockets.git", :tag => "v2.8.3"
 
   gem 'haml-rails'
 
+gem "iconv", "~> 1.0.3"
 
   # Asset Compressors
   gem 'uglifier', '>= 1.0.3'
@@ -36,7 +42,7 @@ gem 'pg', :group => :production
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'font-awesome-sass-rails'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 3.1.1'
 
 #end
 
@@ -66,7 +72,7 @@ gem "actionmailer"
 # Carrierwave allows file upload
 # gem "carrierwave"
 # gem 'client_side_validations'
-# gem 'carmen-rails', :git => "git://github.com/lukast-akra/carmen-rails.git"
+# gem 'carmen-rails', :git => "https://github.com/lukast-akra/carmen-rails.git"
 # gem 'responders'
 gem 'inherited_resources'
 gem 'factory_girl_rails', '~> 3.0', :group => :development
@@ -76,7 +82,7 @@ gem 'god', :require => false
 gem 'json'
 gem 'fastercsv'
 gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap', :git => "git://github.com/f3ndot/will_paginate-bootstrap.git"
+gem 'will_paginate-bootstrap', :git => "https://github.com/f3ndot/will_paginate-bootstrap.git"
 gem 'colored'
 gem 'rdiscount'
 gem 'rest-client' # legacy, horrible performance over multiple requests
