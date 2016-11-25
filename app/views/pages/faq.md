@@ -26,7 +26,7 @@ ImplicitCAD and OpenSCAD
 
 **Is it based on OpenCSG and CGAL like OpenSCAD?** Nope. ImplicitCAD has a custom graphics engine instead of relying on external libraries.
 
-**How do ImplicitCAD's graphics capabilities differe from OpenSCAD?**
+**How do ImplicitCAD's graphics capabilities differ from OpenSCAD?**
 
 * ImplicitCAD is capable of describing a much wider range of primitives and transformations. An example of this would be rounded unions, which are like unions except with the interface between the objects rounded.
 
