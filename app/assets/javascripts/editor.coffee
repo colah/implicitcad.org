@@ -55,7 +55,8 @@ $ ->
     $(".stl-viewer").stlViewer("clearGeometry")
 
     post = $.ajax
-      url: 'http://193.110.157.106:8000/render/'
+      # This URL is given to the client.
+      url: 'http://implicit.faikvm.com/render/'
       data: {source: codeMirror.getValue()}
       dataType: "jsonp"
       success: (response) ->
@@ -77,7 +78,8 @@ $ ->
     console_reset()
     console_write "<p>Preparing Export...</p>"
     $.ajax
-      url: 'http://193.110.157.106:8000/render/' 
+      # This URL is given to the client.
+      url: 'http://implicit.faikvm.com/render/'
       data: {source: codeMirror.getValue(), format: format_req}
       dataType: "jsonp"
       success: (response) ->
@@ -102,5 +104,5 @@ $ ->
   # Sending the code to the server to render
   $(".btn-render").click => render_and_load()
    
-  $(window).load => do render_and_load()  if content.length > 2
+  $(window).load => do render_and_load  if content.length > 2
 
