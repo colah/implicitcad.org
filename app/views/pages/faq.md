@@ -40,7 +40,7 @@ ImplicitCAD and OpenSCAD
 
 * ImplicitCAD is capable of parallel rendering. Unlike OpenSCAD, it is happy to use more threads and be faster!
 
-**Does ImplicitCAD have a GUI like OpenSCAD?** Nope. ImplicitCAD is just the compiler. It seems healthy to separate IDEs and underlying language. That said, if you want IDE integration, *implicitsnap.hs* compiles into a REST API server. And there's an online IDE at [implicitcad.org(implicitcad.org).
+**Does ImplicitCAD have a GUI like OpenSCAD?** Nope. ImplicitCAD is just the compiler. It seems healthy to separate IDEs and underlying language. That said, if you want IDE integration, *implicitsnap.hs* compiles into a REST API server. And there's an online IDE at [implicitcad.org](http://implicitcad.org).
 
 **How does the extopenscad language vary from OpenSCAD?**
 
@@ -59,7 +59,7 @@ for (c = [1, 2, 3]) {
 
 ```
 sphere(10);
-tanslate([20,0,0]) sphere(5);
+translate([20,0,0]) sphere(5);
 ```
 
 will only show the first sphere. You need to use a union, like
@@ -67,7 +67,7 @@ will only show the first sphere. You need to use a union, like
 ```
 union(){
   sphere(10);
-  tanslate([20,0,0]) sphere(5);
+  translate([20,0,0]) sphere(5);
 }
 ```
 
