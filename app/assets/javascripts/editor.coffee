@@ -56,7 +56,7 @@ $ ->
 
     post = $.ajax
       # This URL is given to the client.
-      url: 'http://implicit.faikvm.com/render/'
+      url: 'http://implicitcad.org/render/'
       data: {source: codeMirror.getValue()}
       dataType: "jsonp"
       success: (response) ->
@@ -79,7 +79,7 @@ $ ->
     console_write "<p>Preparing Export...</p>"
     $.ajax
       # This URL is given to the client.
-      url: 'http://implicit.faikvm.com/render/'
+      url: 'http://implicitcad.org/render/'
       data: {source: codeMirror.getValue(), format: format_req}
       dataType: "jsonp"
       success: (response) ->
