@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require jquery.ui.all
-//= require bootstrap-dropdown
+//= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/
 //= require_tree ./codemirror/
 //= require_tree ./iobar/
