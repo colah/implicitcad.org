@@ -36,7 +36,8 @@ class RenderersController < ApplicationController
   def api_server_url
     #implicitcad_api_server = Rails.env.development? ? "localhost:3000" : "23.21.177.106:3000"
     #implicitcad_api_server = Rails.env.development? ? "192.168.10.147:8888" : "23.21.177.106:3000"
-    implicitcad_api_server = "23.21.177.106:3000"
+    implicitcad_api_server = "127.0.0.1:3000"
+#    implicitcad_api_server = "23.21.177.106:3000"
   end
 
   def extopenscad(f, format)
