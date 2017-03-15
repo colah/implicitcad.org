@@ -21,7 +21,7 @@
 
         **Do I have to design objects in the Extopenscad language?** Nope. ImplicitCAD provides a Haskell API, so you can also design objects in Haskell. Haskell functions can quite easily be exported to C, so using ImplicitCAD to design objects in C is also possible. From there, most languages support interacting with C, so with a bit of work you should be able to use ImplicitCAD to design objects in your language of preference...
 
-        **How do I try ImplicitCAD/Extopenscad?** You can try ImplicitCAD without installing it at [www.implicitcad.org](http://www.implicitcad.org) or by installing it locally on your computer by following the [installation instructions](#local-installation).
+        **How do I try ImplicitCAD/Extopenscad?** You can try ImplicitCAD without installing it at [implicitcad.org](http://implicitcad.org) or by installing it locally on your computer by following the [installation instructions](#local-installation).
 
         **How do I learn Extopenscad?** Check out the [tutorial](/docs/tutorial)!
 
@@ -78,7 +78,7 @@
 
         * ImplicitCAD is capable of parallel rendering. Unlike OpenSCAD, it is happy to use more threads and be faster!
 
-        **Does ImplicitCAD have a GUI like OpenSCAD?** Nope. ImplicitCAD is just the compiler. It seems healthy to separate IDEs and underlying language. That said, if you want IDE integration, *implicitsnap.hs* compiles into a REST API server. And there's an online IDE at [www.implicitcad.org](www.implicitcad.org).
+        **Does ImplicitCAD have a GUI like OpenSCAD?** Nope. ImplicitCAD is just the compiler. It seems healthy to separate IDEs and underlying language. That said, if you want IDE integration, *implicitsnap.hs* compiles into a REST API server. And there's an online IDE at [implicitcad.org](http://implicitcad.org/).
 
         **How does the extopenscad language vary from OpenSCAD?**
 
@@ -115,7 +115,7 @@
             =preserve do
               :escaped
                 sphere(10);
-                tanslate([20,0,0]) sphere(5);
+                translate([20,0,0]) sphere(5);
       :markdown
 
 
@@ -128,7 +128,7 @@
               :escaped
                 union(){
                   sphere(10);
-                  tanslate([20,0,0]) sphere(5);
+                  translate([20,0,0]) sphere(5);
                 }
       :markdown
 
