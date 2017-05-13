@@ -23,3 +23,12 @@ Gemfile.lock
 *.sublime-workspace
 
 .vagrant
+
+# ignore generated web content.
+public/docs/*
+public/*.html
+public/examples/
+
+# ignore emacs backups.
+*~
+\#*\#
