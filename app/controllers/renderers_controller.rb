@@ -61,6 +61,6 @@ class RenderersController < ApplicationController
     return response
   end
 
-  add_method_tracer :extopenscad, 'Custom/RenderController/extopenscad', :metric => true
+#  add_method_tracer :extopenscad, 'Custom/RenderController/extopenscad', :metric => true
 
 end
