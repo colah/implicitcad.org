@@ -41,14 +41,26 @@ gem 'dalli'
 gem 'authlogic'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# not actively maintained. migrate to responders gem.
+gem 'inherited_resources'
+
+gem 'colored'
+gem 'rest-client' # legacy, horrible performance over multiple requests
+gem 'typhoeus', '0.5.0.pre' # way better performance over multiple requests
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap', git: 'https://github.com/f3ndot/will_paginate-bootstrap.git'
+
+# Testing
+group :production do
+  gem "rspec-rails", "~> 2.0"
+end
+
+
 # to send email.
 # gem 'actionmailer'
 # gem 'rfc822'
 
-# not actively maintained. migrate to responders gem.
-gem 'inherited_resources'
-
-# Other Libraries
+# Other gems
 # gem 'factory_girl_rails', '~> 3.0', :group => :development
 # gem 'actionpack', '~> 3.0', :group => :development
 
@@ -58,12 +70,6 @@ gem 'inherited_resources'
 # gem 'json'
 # gem 'fastercsv'
 # gem 'rdiscount'
-
-gem 'colored'
-gem 'rest-client' # legacy, horrible performance over multiple requests
-gem 'typhoeus', '0.5.0.pre' # way better performance over multiple requests
-gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap', git: 'https://github.com/f3ndot/will_paginate-bootstrap.git'
 
 # Carrierwave allows file upload
 # gem 'carrierwave'
