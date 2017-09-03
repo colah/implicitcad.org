@@ -1,20 +1,19 @@
 ImplicitCadOrg::Application.routes.draw do
+  root to: 'pages#index'
 
-  root :to => "pages#index"
+  match 'docs', to: 'pages#docs'
+  match 'docs/api', to: 'pages#api'
+  match 'docs/tutorial', to: 'pages#tutorial'
+  match 'docs/tutorialSCAD', to: 'pages#tutorial'
 
-  match "docs", :to => "pages#docs"
-  match "docs/api", :to => "pages#api"
-  match "docs/tutorial", :to => "pages#tutorial"
-  match "docs/tutorialSCAD", :to => "pages#tutorial"
+  match 'faq', to: 'pages#faq'
 
-  match "faq", :to => "pages#faq"
+  match 'editor', to: 'pages#editor'
 
-  match "editor", :to => "pages#editor"
+  match 'examples', to: 'pages#examples'
+  match 'examples/:example', to: 'pages#editor'
 
-  match "examples", :to => "pages#examples"
-  match "examples/:example", :to => "pages#editor"
-
-  match "render", :to => "renderers#render_scad"
+  match 'render', to: 'renderers#render_scad'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -63,11 +62,11 @@ ImplicitCadOrg::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
-  # See how all your routes lay out with "rake routes"
+  # See how all your routes lay out with 'rake routes'
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
