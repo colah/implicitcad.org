@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle stable rails:
 gem 'rails', git: 'https://github.com/rails/rails.git', branch: '3-2-stable'
 
+# An earlier version of rake, to avoid the "no last comment" bug.
+gem 'rake', '< 11.0'
+
 # Database. not used, but required by activerecord?
 # gem 'sqlite3', :group => [:development, :test]
 # gem 'pg', :group => :production
