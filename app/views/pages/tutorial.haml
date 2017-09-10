@@ -9,6 +9,7 @@
 
         If you already know OpenSCAD, you may prefer to look at the [section of our FAQ](/faq#implicitcad-and-openscad) comparing extopenscad and OpenSCAD.
 
+      %p
       =h2_anchor "Running ImplicitCAD"
       :markdown
 
@@ -29,6 +30,7 @@
 
         On the other hand, using ImplicitCAD in the editor is as simple as clicking the "Render" button. It does, however, require WebGL.
 
+      %p
       =h2_anchor "A Simple Object"
       :markdown
     
@@ -58,25 +60,25 @@
 
         The 3D analog, `cube` behaves similarly (eg. `cube([10,20,30])`). Other primitives include `cylinder` and `polygon`. There primitives are all documented in the [API Reference](/docs/api).
 
+      %p
+      =h2_anchor "Rendering Quality"
+      :markdown
 
-        Rendering Quality
-        -----------------
-
-        ImplicitCAD has a perfect model of your object internally, but when you ask for it to be rendered in some format, it isn't possible to export it in that manner. ImplicitCAD can try to export it very quickly and not do as good a job, or take longer and do a better job. This is rendering quality.
+        ImplicitCAD has a near-perfect model of your object internally, but when you ask for it to be rendered in some format, it isn't possible to export it in that manner. ImplicitCAD can try to export it very quickly and not do as good a job, or take longer and do a better job. This is rendering quality.
 
         Rendering quality is controlled by the variable `$quality` which is by default `1`. You can make it arbitrarily high, though the server will refuse to render objects at very high qualities because it needs to serve many people. The amount of time it will take to render is linear with respect to quality, so doubling quality will approximately double the amount of time it takes for your object to render.
 
         Rendering quality is particularly visible when exporting triangle meshes.
 
+      %p
       .row.vertical-margined
         .span4.offset2
           .well.example-image{style: "background-image: url('/assets/tutorial-sphere-bad.png'); background-size:contain;"}
         .span4.offset
           .well.example-image{style: "background-image: url('/assets/tutorial-sphere-good.png'); background-size:contain;"}
-      :markdown
 
-        Making More Complicated Objects
-        -------------------------------
+      =h2_anchor "Making More Complicated Objects"
+      :markdown
 
         The key thing to building more complicated objects is to make them out of less complex ones. The simplest way to do this is with a `union`, which simply "adds" objects together. Note that we use translate to shift an object.
 
@@ -106,10 +108,10 @@
             square(20);
             translate([10,10]) square(20);
           }
-      :markdown
 
-        Linear Extrude
-        --------------
+      %p
+      =h2_anchor "Linear Extrude"
+      :markdown
 
         Linear extrude is both a powerful tool and a good example of how ImplicitCAD philosophy of *generalization*. At its simplest, `linear_extrude` turns a 2D object into a 3D object by extruding it on the z-axis.
 
@@ -134,6 +136,3 @@
           linear_extrude(20, scale(h) = 1 + cos(h)/10)
             circle(30);
       :markdown
-
-      //:markdown
-      //  #{File.read(File.join(File.dirname(__FILE__), "tutorial.md"))}
