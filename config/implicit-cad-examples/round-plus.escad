@@ -1,5 +1,5 @@
-linear_extrude (height = 30, twist = 180, center=true, r=2)
+linear_extrude (height = 30, twist = 180, r=2)
   union (r=2) {
-    square([4,20], center=true, r=2);
-    square([20,4], center=true, r=2);
+    square(x=[-2,2], y=[-10,10], r=2);
+    square(x=[-10,10], y=[-2,2], r=2);
   }

@@ -1,5 +1,5 @@
-linear_extrude (height = 40, twist(h) = 90*cos(h*2*pi/40), center=true)
+linear_extrude (height = 40, twist(h) = 90*cos(h*2*pi/40))
   difference () {
     shell(2) circle (10);
-    translate ([-10,0]) square([20,8], center=true);
+    square(x=[0,20], y=[-4,4]);
   }
