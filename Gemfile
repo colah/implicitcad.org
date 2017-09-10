@@ -40,6 +40,9 @@ gem 'unicorn'
 # For memcache
 gem 'dalli'
 
+# Getting the content of URLs, EG for kallithea
+gem "mechanize"
+
 # Authentication, and authorization.
 gem 'authlogic'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -58,6 +61,8 @@ group :production do
   gem "rspec-rails", "~> 2.0"
 end
 
+# for markdown
+gem 'redcarpet'
 
 # to send email.
 # gem 'actionmailer'
