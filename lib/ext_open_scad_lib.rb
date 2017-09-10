@@ -3,9 +3,9 @@ require 'fileutils'
 # manually call extopenscad.
 module ExtOpenScad
   def self.compile!(scad_script)
-    puts 'moooo\n' * 2
+    puts "moooo\n" * 2
     puts scad_script
-    puts '\n' * 3
+    puts "\n" * 3
 
     # create the temp files
     FileUtils.mkpath(File.join(Rails.root, 'tmp', 'scads'))
@@ -14,7 +14,7 @@ module ExtOpenScad
     puts files.inspect
     stdin, stdout, stderr = [nil, nil, nil]
     response_data = ''
-    puts 'moo cows! LOL!'
+    puts "moo cows! LOL!\n"
 
     begin
       puts 'Begining the render!!'
