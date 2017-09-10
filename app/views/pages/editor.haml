@@ -9,40 +9,23 @@
           .caret
         %ul.dropdown-menu
           = navigation_item "/docs/tutorial", "Tutorial"
+          = navigation_item "/docs/install", "Installing"
           = navigation_item "/docs/api", "API Reference"
-          = navigation_item "/faq", "FAQ"
+          = navigation_item "/docs/faq", "FAQ"
       = navigation_button_small "/examples", "Examples"
       .btn-group
         %a.btn.dropdown-toggle{ "data-toggle" => "dropdown"}
-          Github
+          Source
           .caret
         %ul.dropdown-menu
-          = navigation_item "http://github.com/colah/ImplicitCAD", "ImplicitCAD"
-          = navigation_item "http://github.com/colah/implicitcad.org", "implicitcad.org"
+          = navigation_item "http://kalli1.faikvm.com/ImplicitCAD/Stable", "ImplicitCAD"
+          = navigation_item "http://kalli1.faikvm.com/ImplicitCAD/Website", "ImplicitCAD.org"
+          = navigation_item "http://github.com/colah/ImplicitCAD", "ImplicitCAD(github)"
+          = navigation_item "http://github.com/colah/implicitcad.org", "ImplicitCAD.org(github)"
       = navigation_button_small "/editor", "Try It Online!"
-  //.io-bar
-  //  %a.btn.btn-small.file-new{href: "#"}
-  //    %i.icon-file
-  //    New
-  //  %a.btn.btn-small.file-open{href: "#"}
-  //    %i.icon-folder-open
-  //    Open..
-  //  %a.btn.btn-small.file-save{href: "#"}
-  //    %i.icon-ok
-  //    Save
-  //  %a.btn.btn-small.file-save-as{href: "#"}
-  //    %i.icon-pencil
-  //    Save As..
-  //  %a.btn.btn-small.file-cnc{href: "#"}
-  //    %i.icon-download-alt
-  //    Send to CNC
-  //  %a.btn.btn-small.logout{href: "/sessions/logout"}
-  //    %i.icon-lock
-  //    Log Out
-
 
 .editor_and_viewer_container
-  %pre.editor= escad_example(@example)
+  %pre.editor= @code || escad_example(@example)
 
   .output.well
     .btns-output
@@ -85,13 +68,4 @@
     %h3 Console
     .well.console
 
-
-%script{:id=>"load-modal-template", :type=>"text/x-handlebars-template"}
-  = render :partial => "iobar/load-modal"
-
-%script{:id=>"save-as-modal-template", :type=>"text/x-handlebars-template"}
-  = render :partial => "iobar/save-as-modal"
-
-%script{:id=>"delete-files-warning-template", :type=>"text/x-handlebars-template"}
-  = render :partial => "iobar/delete-files-warning"
 
