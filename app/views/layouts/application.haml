@@ -20,16 +20,19 @@
             .caret
           %ul.dropdown-menu
             = navigation_item "/docs/tutorial", "Tutorial"
+            = navigation_item "/docs/install", "Installing"
             = navigation_item "/docs/api", "API Reference"
-            = navigation_item "/faq", "FAQ"
+            = navigation_item "/docs/faq", "FAQ"
         = navigation_button "/examples", "Examples"
         .btn-group
           %a.btn.btn-large.dropdown-toggle{ "data-toggle" => "dropdown"}
-            Github
+            Source
             .caret
           %ul.dropdown-menu
-            = navigation_item "http://github.com/colah/ImplicitCAD", "ImplicitCAD"
-            = navigation_item "http://github.com/colah/implicitcad.org", "implicitcad.org"
+            = navigation_item "http://kalli1.faikvm.com/ImplicitCAD/Stable", "ImplicitCAD"
+            = navigation_item "http://kalli1.faikvm.com/ImplicitCAD/Website", "ImplicitCAD.org"
+            = navigation_item "http://github.com/colah/ImplicitCAD", "ImplicitCAD(github)"
+            = navigation_item "http://github.com/colah/implicitcad.org", "ImplicitCAD.org(github)"
         = navigation_button "/editor", "Try It Online!"
 
   = yield
