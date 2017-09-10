@@ -1,5 +1,4 @@
 #= require stl_geometry
-#= require iobar/io-bar
 
 v = (x,y,z) -> new THREE.Vector3(x,y,z)
 

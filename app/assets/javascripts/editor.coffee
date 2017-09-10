@@ -1,4 +1,8 @@
+# to render stl files.
 #= require stl_viewer
+# for the console.
+#= require iobar/io-bar
+# for the colour highlighting editor.
 #= require codemirror_extopenscad
 $ ->
   $editor = $(".editor")
