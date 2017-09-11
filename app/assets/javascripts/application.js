@@ -11,11 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui
 //= require jquery_ujs
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/widgets/mouse
 //= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/
 //= require_tree ./codemirror/
-//= require_tree ./iobar/
-//= require_tree .
+//= require_directory .
 
