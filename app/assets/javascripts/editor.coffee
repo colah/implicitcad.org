@@ -79,7 +79,7 @@ $ ->
 
 
   export_and_download = (format_req, format_mime, ext) -> 
-    console_reset()
+    console_reset
     console_write "<p>Preparing Export...</p>"
     $.ajax
       # This URL is given to the client.
@@ -106,7 +106,7 @@ $ ->
   # DO THIS LAST -- it may fail, and we want the other things set up.
   $stlViewer = $(".stl-viewer").stlViewer()
   # Sending the code to the server to render
-  $(".btn-render").click => render_and_load()
+  $(".btn-render").click => render_and_load
    
   $(window).load => do render_and_load  if content.length > 2
 
