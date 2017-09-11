@@ -26,10 +26,13 @@ This opens the server on port 9001, by default. It is reccomended that you use a
 
 ## Notes
 
-ImplicitCAD.org uses r50 of webgl loader
+For versions of dependent components, please see vendor/sources .
 
 ## License
 
-ImplicitCAD.org is released under the MIT license:
+ImplicitCAD.org is now licensed under the GNU AGPL version 3 or greater.
+see the LICENSE file for more details.
+
+ImplicitCAD.org was originally released under the MIT license:
 
 www.opensource.org/licenses/MIT
