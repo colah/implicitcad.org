@@ -1,0 +1,74 @@
+.content-container-wrapper
+  .index
+    .container.enlarged
+      %h1 Install ImplicitCAD
+      %p.xlarge-strong
+      
+        You do not need to install ImplicitCAD to try it. You can try it in the
+        %a{href: "/editor"} online editor
+        provided by this website.
+        
+      %p.xlarge
+      There are three ways you can install ImplicitCAD locally: install a binary, build the latest release, or build the development version. In the future, we hope to provide packages for Linux distributions, but we don't presently.
+
+      =h2_anchor "Download Binary"
+
+      %p.xlarge
+        Download the version for your operating system. It should work as is.
+
+      %p.xlarge
+        This will only give you the extopenscad executable. It will not give you the Haskell libraries. For most peoples' uses this is fine.
+
+        .vertical-margined
+          .row
+            .span3
+              %a.btn.btn-large.btn-success.btn-fill.disabled{href: "/assets/extopenscad-windows-32" }
+                Windows (32 bit)
+            .span3
+              %a.btn.btn-large.btn-success.btn-fill.disabled{href: "/assets/extopenscad-linux-32" }
+                Linux (32 bit)
+          %br
+          .row
+            .span3
+              %a.btn.btn-large.btn-success.btn-fill.disabled{href: "/assets/extopenscad-windows-64" }
+                Windows (64 bit)
+            .span3
+              %a.btn.btn-large.btn-success.btn-fill.disabled{href: "/assets/extopenscad-linux-64" }
+                Linux (64 bit)
+            .span3
+              %a.btn.btn-large.btn-success.btn-fill.disabled{href: "/assets/extopenscad-mac" }
+                OSX (64 bit)
+
+      =h2_anchor "Linux Packages"
+
+      %p.xlarge-strong
+        Sadly, ImplicitCAD packages have not been made for any Linux distros yet.
+
+      =h2_anchor "Build"
+
+      :markdown
+
+         1. Install GHC and cabal.
+           * Debain/Ubuntu: `apt-get install ghc cabal-install`
+           * Archlinux: `pacman -S ghc cabal-install`
+           * Red Hat/Fedora: `yum install ghc cabal-install`
+           * Mac OSX:
+             * Homebrew: `brew install ghc cabal-install`
+             * *Fink doesn't seem to have a package for cabal* Install the Haskell Platform manually as described [here](http://hackage.haskell.org/platform/mac.html).
+           * Windows: Follows [these install instructions](http://hackage.haskell.org/platform/windows.html).
+           * [Other unices](http://www.haskell.org/platform/linux.html)
+         2. You now have two options for installation:
+           * Latest release:
+             * Use cabal to install ImplicitCAD: `cabal update && cabal install implicit`
+           * Development version:
+             * Install the dependencies: `cabal update && cabal install hashmap parallel parsec plugins JuicyPixels blaze-builder blaze-markup blaze-svg storable-endian unordered-containers vector-space`
+             * Git clone this repo: `git clone https://github.com/colah/ImplicitCAD.git`
+             * cd in: `cd ImplicitCAD/`
+             * cabal install it: `cabal configure && cabal install`
+
+        **I get the error `bash: extopenscad: command not found` (or similar for your shell).**
+          * This probably means `~/.cabal/bin/` is not in your `$PATH` variable. Try using `~/.cabal/bin/extopenscad` as your command instead.
+
+        **I get the error `module is not loaded: 'Graphics.Implicit' (./Graphics/Implicit.hs)` when trying to use the ImplicitCAD Haskell library.**
+          * This is most likely a problem with your Linux distro and cabal not playing nice. GHC is not configured to see the ImplicitCAD libraries. You can confirm this by try the test in `~/.cabal/lib/`. If that works, you should be able to use ghc anywhere with the `-Ldir` or `-llib` options. Alternatively, some people have permanently fixed this by doing the cabal install as root.
+

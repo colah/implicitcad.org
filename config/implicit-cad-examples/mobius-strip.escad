@@ -1,0 +1,2 @@
+rotate_extrude(365, translate(h) = [15,0], rotate(t) = t/2)
+        square([3,10], center=true);
