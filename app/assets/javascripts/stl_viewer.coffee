@@ -1,5 +1,3 @@
-#= require stl_geometry
-
 v = (x,y,z) -> new THREE.Vector3(x,y,z)
 
 $.widget "ui.stlViewer", $.ui.mouse,
@@ -157,10 +155,6 @@ $.widget "ui.stlViewer", $.ui.mouse,
     @setTransparent(@transparent, false)
     @render()
     console.log "loaded geometry!"
-
-
-  loadSTL: (stlString)->
-    @loadGeometry new STLGeometry(stlString)
 
 
   render: ->
