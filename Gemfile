@@ -9,7 +9,7 @@ gem 'rake', '< 11.0'
 # Database. not used, but required by activerecord?
 # gem 'sqlite3', :group => [:development, :test]
 # gem 'pg', :group => :production
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.5'
 
 # Gems used only for assets and not required
 # in production environments by default.
