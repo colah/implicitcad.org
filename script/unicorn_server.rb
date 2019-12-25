@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 env = ENV['RAILS_ENV'] || 'development'
 capitalized_env = "#{env[0].upcase}#{env[1..-1]}"
 Dir.chdir(File.join(File.dirname(__FILE__), '..'))
